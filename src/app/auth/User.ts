@@ -3,5 +3,4 @@ export interface User {
     userid: string;
     email: string;
     pwd: string;
-
 }

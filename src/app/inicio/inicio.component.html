@@ -1,12 +1,36 @@
-
-<img src="../assets/restpet.svg"/>
-
-<div class="container">
+<nav>
 
 
-    <span class="colaborate">Colaborate</span>
 
-<a  class="colaborate" href="https://www.freevector.com/fireside-pets-29679">FreeVector.com</a>
+
+
+<a class="button buttonNosotros"
+routerLinkActive="activebutton"
+routerLink="/nosotros-page/4">Nosotros</a> 
+
+
+<a class="button buttonAdoptar" 
+routerLinkActive="activebutton" routerLink="/escogitamiento-adoptar-page">Adoptar</a>
+
+
+    <a class="button buttonRegistrarse" 
+    routerLinkActive="activebutton" routerLink="/registro-page">Registrate</a>
+
+    <a class="button buttonUneteClub" 
+    routerLinkActive="activebutton" routerLink="/escogitamiento-rol-page">Unete al Club</a>
+
+    <a class="button buttonIniciar" 
+    routerLinkActive="activebutton" routerLink="/login-page">Ingresar</a>
+
+    
+</nav>
+
+<div  *ngFor="let foto of fotos">
+
+
+    <img src="{{foto.nombre}}"/>
+    <br/>
+
 
 </div>
 

@@ -12,10 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordForgotComponent } from './auth/password-forgot/password-forgot.component';
 import { OlvidoContrasenaComponent } from './auth/olvido-contrasena/olvido-contrasena.component';
-import { EscogitamientoRolComponent } from './auth/escogitamiento-rol/escogitamiento-rol.component';
+import { EscogitamientoRolComponent } from './escogitamiento-rol/escogitamiento-rol.component';
 import { EscogitamientoAdoptarComponent } from './escogitamiento-adoptar-tipo/escogitamiento-adoptar.component';
 import { EscogitamientoAdoptarGeneroComponent} from './escogitamiento-adoptar-genero/escogitamiento-adoptar-genero.component';
 import { VistaCatalogoComponent } from './vista-catalogo/vista-catalogo.component';
+import { AlwaysAuthGuard } from './guards/AlwaysAuthGuard';
+import { PortalUserRescatistaComponent } from './auth/guards/portal-user-rescatista/portal-user-rescatista.component';
+import { EscogitamientoTipoRescatistaComponent } from './escogitamiento-tipo-rescatista/escogitamiento-tipo-rescatista.component';
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { VistaCatalogoComponent } from './vista-catalogo/vista-catalogo.componen
     EscogitamientoRolComponent,
     EscogitamientoAdoptarComponent,
     EscogitamientoAdoptarGeneroComponent,
-    VistaCatalogoComponent
+    VistaCatalogoComponent,
+    PortalUserRescatistaComponent,
+    EscogitamientoTipoRescatistaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +53,12 @@ import { VistaCatalogoComponent } from './vista-catalogo/vista-catalogo.componen
     {path: 'escogitamiento-adoptar-page', component: EscogitamientoAdoptarComponent},
     {path: 'escogitamiento-adoptar-genero-page', component: EscogitamientoAdoptarGeneroComponent},
     {path: 'vista-catalogo', component: VistaCatalogoComponent},
+    {path: 'portal-user-rescatista', component: PortalUserRescatistaComponent},
+    {path: 'escogitamiento-tipo-rescatista-page', component: EscogitamientoTipoRescatistaComponent},
     ]),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AlwaysAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

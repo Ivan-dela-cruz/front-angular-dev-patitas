@@ -18,11 +18,11 @@ export class LoginComponent implements OnInit {
 
   login(form: { value: User; }){
     this.authService.login(form.value).subscribe(res=>{
-      this.router.navigateByUrl('inicio-page');
+      this.router.navigateByUrl('portal-user-rescatista');
     },
     err=>{
       alert("Logeado con Exito ;)");
-      this.router.navigateByUrl('inicio-page');
+      this.router.navigateByUrl('portal-user-rescatista');
      
       //this.presentToast(err.error);
     } );
